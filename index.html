@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Fortune 智慧信仰系統｜廟務營運工作台</title>
+    <meta
+      name="description"
+      content="Smart Fortune 智慧信仰系統概念原型，廟務與信仰服務數位平台工作台。"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="side-rail" aria-label="工作台導覽">
+        <a class="brand-mark" href="#top" aria-label="回到總覽">
+          <span class="seal" aria-hidden="true">福</span>
+          <span>
+            <strong>Smart Fortune</strong>
+            <small>智慧信仰系統</small>
+          </span>
+        </a>
+
+        <nav class="rail-nav" aria-label="功能模組">
+          <a href="#overview" data-nav="overview">營運總覽</a>
+          <a href="#booking" data-nav="booking">祈福預約</a>
+          <a href="#orders" data-nav="orders">點燈法會</a>
+          <a href="#members" data-nav="members">信眾會員</a>
+          <a href="#finance" data-nav="finance">功德收支</a>
+          <a href="#ritual" data-nav="ritual">籤詩流程</a>
+          <a href="#tasks" data-nav="tasks">待辦通知</a>
+        </nav>
+
+        <section class="source-mini" aria-label="來源摘要">
+          <span>114 年（2025）</span>
+          <strong>創業驗證組成果評選分級獎勵名單</strong>
+          <p>研宇宙科技(股)有限公司，實踐級，臺北市。</p>
+        </section>
+      </aside>
+
+      <main class="main-stage" id="top">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">廟務與信仰服務數位平台</p>
+            <h1>Smart Fortune 智慧信仰系統</h1>
+            <p class="lead">
+              把祈福預約、點燈法會、信眾關係、功德金與廟方待辦收進同一個安定清楚的營運工作台。
+            </p>
+          </div>
+          <div class="today-card" aria-label="今日值班資訊">
+            <span>今日香務</span>
+            <strong id="todayLabel">載入中</strong>
+            <small>櫃台、線上服務、法會組同步中</small>
+            <button class="ghost-button" id="resetDemo" type="button">重置樣本</button>
+          </div>
+        </header>
+
+        <section class="source-panel" aria-labelledby="source-title">
+          <div>
+            <p class="eyebrow">公開來源與原型聲明</p>
+            <h2 id="source-title">創業歸故里驗證輔導計畫｜114 年（2025）</h2>
+          </div>
+          <dl class="source-grid">
+            <div>
+              <dt>屆次/階段</dt>
+              <dd>創業驗證組成果評選分級獎勵名單</dd>
+            </div>
+            <div>
+              <dt>團隊/公司</dt>
+              <dd>研宇宙科技(股)有限公司</dd>
+            </div>
+            <div>
+              <dt>得獎/分類</dt>
+              <dd>實踐級，臺北市</dd>
+            </div>
+            <div>
+              <dt>作品名稱</dt>
+              <dd>Smart Fortune 智慧信仰系統</dd>
+            </div>
+          </dl>
+          <p class="disclaimer">
+            官方來源：
+            <a href="https://sccontest.tca.org.tw/content/display#sectionA" target="_blank" rel="noreferrer">
+              https://sccontest.tca.org.tw/content/display#sectionA
+            </a>
+            。這是依公開得獎資訊與概念自行製作的興趣原型，不是原團隊官方 demo 或產品。
+          </p>
+        </section>
+
+        <section class="metrics-grid" id="overview" aria-label="營運總覽">
+          <article class="metric-card">
+            <span>今日預約</span>
+            <strong id="metricBookings">0</strong>
+            <small>需現場確認與簡訊提醒</small>
+          </article>
+          <article class="metric-card">
+            <span>待處理訂單</span>
+            <strong id="metricOrders">0</strong>
+            <small>點燈、法會、代辦祭品</small>
+          </article>
+          <article class="metric-card">
+            <span>本期功德淨額</span>
+            <strong id="metricBalance">NT$0</strong>
+            <small>含線上與櫃台收支</small>
+          </article>
+          <article class="metric-card">
+            <span>廟方待辦</span>
+            <strong id="metricTasks">0</strong>
+            <small>未完成事項</small>
+          </article>
+        </section>
+
+        <section class="work-grid" aria-label="工作模組">
+          <article class="module module-wide" id="booking">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Pilgrim Service</p>
+                <h2>祈福服務預約</h2>
+              </div>
+              <span class="module-status">櫃台可接單</span>
+            </div>
+            <form class="form-grid" id="bookingForm">
+              <label>
+                信眾姓名
+                <input name="person" type="text" value="林佩珊" required>
+              </label>
+              <label>
+                服務項目
+                <select name="service">
+                  <option>安太歲登記</option>
+                  <option>考試祈福</option>
+                  <option>平安補運</option>
+                  <option>新居入火祈福</option>
+                  <option>公司行號開運</option>
+                </select>
+              </label>
+              <label>
+                預約日期
+                <input name="date" type="date" required>
+              </label>
+              <label>
+                時段
+                <select name="time">
+                  <option>09:00-10:00</option>
+                  <option>10:30-11:30</option>
+                  <option>14:00-15:00</option>
+                  <option>16:00-17:00</option>
+                  <option>19:00-20:00</option>
+                </select>
+              </label>
+              <label class="full-span">
+                備註
+                <textarea name="note" rows="3">希望安排家人共同參拜，需提醒攜帶姓名與農曆生日。</textarea>
+              </label>
+              <button class="primary-button" type="submit">加入預約</button>
+            </form>
+            <div class="list-stack" id="bookingList" aria-live="polite"></div>
+          </article>
+
+          <article class="module" id="orders">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Online Offering</p>
+                <h2>線上點燈/法會訂單</h2>
+              </div>
+            </div>
+            <form class="compact-form" id="orderForm">
+              <label>
+                燈種
+                <select name="light">
+                  <option value="光明燈">光明燈｜NT$600</option>
+                  <option value="文昌燈">文昌燈｜NT$800</option>
+                  <option value="財利燈">財利燈｜NT$1,000</option>
+                  <option value="藥師平安燈">藥師平安燈｜NT$900</option>
+                </select>
+              </label>
+              <label>
+                法會
+                <select name="ceremony">
+                  <option value="月例平安法會">月例平安法會｜NT$1,200</option>
+                  <option value="中元普度">中元普度｜NT$1,800</option>
+                  <option value="謝土酬神">謝土酬神｜NT$2,600</option>
+                  <option value="不參加法會">不參加法會｜NT$0</option>
+                </select>
+              </label>
+              <label>
+                登記人
+                <input name="name" type="text" value="陳柏宇" required>
+              </label>
+              <label>
+                盞數/份數
+                <input name="quantity" type="number" min="1" max="12" value="2">
+              </label>
+              <output class="price-output" id="orderEstimate">NT$0</output>
+              <button class="primary-button" type="submit">建立訂單</button>
+            </form>
+            <div class="list-stack tight" id="orderList" aria-live="polite"></div>
+          </article>
+
+          <article class="module" id="members">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Pilgrim CRM</p>
+                <h2>信眾會員卡</h2>
+              </div>
+            </div>
+            <div class="member-card" id="activeMember"></div>
+            <form class="inline-form" id="memberForm">
+              <input name="memberName" type="text" placeholder="新增會員姓名" aria-label="新增會員姓名" required>
+              <select name="memberWish" aria-label="祈願類型">
+                <option>闔家平安</option>
+                <option>考試順利</option>
+                <option>事業順遂</option>
+                <option>健康安康</option>
+              </select>
+              <button type="submit">新增</button>
+            </form>
+            <div class="chip-list" id="memberList" aria-label="會員清單"></div>
+          </article>
+
+          <article class="module module-wide" id="finance">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Merit Ledger</p>
+                <h2>功德金收支看板</h2>
+              </div>
+              <span class="module-status" id="financeStatus">本期對帳中</span>
+            </div>
+            <div class="finance-layout">
+              <form class="compact-form ledger-form" id="ledgerForm">
+                <label>
+                  類型
+                  <select name="type">
+                    <option value="income">收入</option>
+                    <option value="expense">支出</option>
+                  </select>
+                </label>
+                <label>
+                  分類
+                  <select name="category">
+                    <option>點燈</option>
+                    <option>法會</option>
+                    <option>香油錢</option>
+                    <option>公益捐助</option>
+                    <option>修繕採購</option>
+                  </select>
+                </label>
+                <label>
+                  金額
+                  <input name="amount" type="number" min="1" value="1200" required>
+                </label>
+                <label>
+                  摘要
+                  <input name="memo" type="text" value="線上功德金">
+                </label>
+                <button class="primary-button" type="submit">新增收支</button>
+              </form>
+              <div class="bar-panel">
+                <div class="finance-summary" id="financeSummary"></div>
+                <div class="bars" id="financeBars" aria-label="分類收支圖"></div>
+              </div>
+            </div>
+            <div class="ledger-table" id="ledgerList"></div>
+          </article>
+
+          <article class="module" id="ritual">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Ritual Guide</p>
+                <h2>籤詩/祭祀流程引導</h2>
+              </div>
+            </div>
+            <div class="fortune-box" id="fortuneResult">
+              <span>今日籤詩</span>
+              <strong>尚未抽籤</strong>
+              <p>點選抽籤，系統會產生示範籤詩與廟方提示。</p>
+            </div>
+            <button class="primary-button full-button" id="drawFortune" type="button">抽取籤詩</button>
+            <div class="ritual-progress">
+              <div>
+                <span>參拜流程</span>
+                <strong id="ritualProgressText">0/5</strong>
+              </div>
+              <progress id="ritualProgress" value="0" max="5"></progress>
+            </div>
+            <div class="check-list" id="ritualSteps"></div>
+          </article>
+
+          <article class="module" id="tasks">
+            <div class="module-heading">
+              <div>
+                <p class="eyebrow">Temple Ops</p>
+                <h2>廟方待辦與通知</h2>
+              </div>
+            </div>
+            <form class="inline-form" id="taskForm">
+              <input name="taskTitle" type="text" placeholder="新增待辦事項" aria-label="新增待辦事項" required>
+              <select name="taskOwner" aria-label="負責組別">
+                <option>櫃台</option>
+                <option>法會組</option>
+                <option>財務</option>
+                <option>志工</option>
+              </select>
+              <button type="submit">新增</button>
+            </form>
+            <div class="task-list" id="taskList"></div>
+            <div class="notice-board">
+              <h3>通知</h3>
+              <div id="noticeList"></div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
