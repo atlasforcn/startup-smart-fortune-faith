@@ -1,5 +1,21 @@
 # Smart Fortune 智慧信仰系統
 
+## 快速看懂
+
+![startup-smart-fortune-faith 功能截圖](docs/preview.png)
+
+- 線上 Demo：https://atlasforcn.github.io/startup-smart-fortune-faith/
+- 這個原型在做什麼：把 Smart Fortune 做成廟務與信仰服務數位工作台。
+- 特色定位：特色是把祈福預約、點燈法會、功德金與信眾會員整合成廟方可營運的系統。
+- 操作流程：建立祈福、點燈或法會訂單 → 查看信眾會員、功德金與待辦通知 → 用流程引導完成籤詩/祭祀服務追蹤
+
+<details>
+<summary>展開完整功能流程截圖</summary>
+
+![startup-smart-fortune-faith 完整功能流程截圖](docs/flow.png)
+
+</details>
+
 這是一個可直接用瀏覽器開啟的靜態 demo repo，將「Smart Fortune 智慧信仰系統」概念做成廟務與信仰服務數位平台工作台。介面不是單純介紹頁，而是提供可操作的祈福預約、線上點燈與法會訂單、信眾會員卡、功德金收支看板、籤詩與祭祀流程引導、廟方待辦與通知。
 
 ## 使用方式
