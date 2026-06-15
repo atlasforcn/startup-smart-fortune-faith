@@ -146,7 +146,7 @@ body.nav-expanded .source-mini {
   aspect-ratio: 1;
   place-items: center;
   color: #fff7df;
-  font-size: 1.25rem;
+  font-size: 1.08rem;
   font-weight: 800;
   background:
     linear-gradient(135deg, rgba(169, 95, 65, 0.95), rgba(118, 84, 106, 0.9)),
@@ -287,14 +287,14 @@ p {
 h1 {
   max-width: 920px;
   margin: 0;
-  font-size: clamp(2.1rem, 5vw, 4.8rem);
-  line-height: 0.98;
+  font-size: 3.4rem;
+  line-height: 1.04;
   letter-spacing: 0;
 }
 
 h2 {
   margin: 0;
-  font-size: clamp(1.22rem, 2vw, 1.7rem);
+  font-size: 1.38rem;
   line-height: 1.25;
 }
 
@@ -357,7 +357,7 @@ h3 {
 .source-panel {
   display: grid;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   padding: 0;
   border-left: 0;
   box-shadow: 0 10px 24px rgba(47, 41, 32, 0.08);
@@ -443,7 +443,7 @@ h3 {
 .disclaimer {
   margin: 0;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   line-height: 1.65;
 }
 
@@ -536,12 +536,12 @@ h3 {
 
 .compact-form {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .inline-form {
   grid-template-columns: minmax(0, 1fr) minmax(0, 150px) auto;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -686,7 +686,7 @@ textarea:focus {
 .member-card {
   position: relative;
   min-height: 178px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   padding: 18px;
   color: #fffaf1;
   background:
@@ -787,7 +787,7 @@ textarea:focus {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .finance-summary div {
@@ -1027,6 +1027,14 @@ progress {
 }
 
 @media (max-width: 820px) {
+  h1 {
+    font-size: 2.45rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
   .main-stage {
     padding: 22px 14px 40px;
   }
@@ -1093,15 +1101,15 @@ progress {
 
 /* repo-snapshot:start */
 .repo-snapshot {
-  min-height: 86vh;
+  min-height: clamp(240px, 36vh, 340px);
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(300px, 0.98fr);
-  gap: 28px;
+  gap: 20px;
   align-items: center;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 54px clamp(22px, 5vw, 74px);
+  padding: 26px clamp(18px, 3vw, 42px);
   color: var(--snap-ink);
   background:
     linear-gradient(120deg, color-mix(in srgb, var(--snap-accent) 16%, transparent) 0 22%, transparent 22% 100%),
@@ -1159,7 +1167,7 @@ progress {
   max-width: 760px;
   color: var(--snap-ink);
   font-family: Georgia, "Noto Serif TC", serif;
-  font-size: 4.05rem;
+  font-size: 2.55rem;
   line-height: 0.98;
   font-weight: 900;
   letter-spacing: 0;
@@ -1167,30 +1175,30 @@ progress {
 
 .snapshot-tagline {
   max-width: 680px;
-  margin: 22px 0 0;
+  margin: 14px 0 0;
   color: color-mix(in srgb, var(--snap-ink) 84%, var(--snap-muted));
-  font-size: 1.16rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.55;
   font-weight: 760;
 }
 
 .snapshot-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 26px;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 .snapshot-chips span {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
-  padding: 0 12px;
+  min-height: 30px;
+  padding: 0 10px;
   color: var(--snap-ink);
   background: color-mix(in srgb, var(--snap-bg) 76%, white 24%);
   border: 1px solid color-mix(in srgb, var(--snap-ink) 16%, transparent);
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 850;
   box-shadow: 0 10px 24px color-mix(in srgb, var(--snap-ink) 10%, transparent);
 }
@@ -1202,8 +1210,8 @@ progress {
 }
 
 .snapshot-device {
-  width: min(100%, 560px);
-  padding: 18px;
+  width: min(100%, 380px);
+  padding: 14px;
   border: 1px solid color-mix(in srgb, var(--snap-ink) 18%, transparent);
   border-radius: 8px;
   background: color-mix(in srgb, var(--snap-bg) 72%, white 28%);
@@ -1216,7 +1224,7 @@ progress {
   justify-content: space-between;
   gap: 16px;
   align-items: start;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .snapshot-device-head span {
@@ -1236,7 +1244,7 @@ progress {
 
 .snapshot-visual {
   position: relative;
-  min-height: 286px;
+  min-height: 148px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--snap-ink) 16%, transparent);
   border-radius: 8px;
@@ -1264,7 +1272,7 @@ progress {
 
 .snapshot-data-row span {
   min-width: 0;
-  padding: 12px;
+  padding: 9px;
   border: 1px solid color-mix(in srgb, var(--snap-ink) 14%, transparent);
   border-radius: 8px;
   background: color-mix(in srgb, white 34%, var(--snap-bg));
@@ -1277,7 +1285,7 @@ progress {
   display: block;
   margin-bottom: 2px;
   color: var(--snap-ink);
-  font-size: 1.25rem;
+  font-size: 1.08rem;
   line-height: 1;
 }
 
@@ -1378,8 +1386,8 @@ progress {
   .repo-snapshot {
     min-height: auto;
     grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 28px 18px 18px;
+    gap: 10px;
+    padding: 20px 16px 14px;
   }
 
   .repo-snapshot::after {
@@ -1388,14 +1396,18 @@ progress {
     top: 18px;
   }
 
+  .snapshot-scene {
+    display: none;
+  }
+
   .snapshot-name {
-    font-size: 2.35rem;
+    font-size: 2rem;
   }
 
   .snapshot-tagline {
-    margin-top: 14px;
-    font-size: 0.98rem;
-    line-height: 1.55;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    line-height: 1.45;
   }
 
   .snapshot-device {
@@ -1445,4 +1457,29 @@ progress {
     font-size: 1.08rem;
   }
 }
+
+.demo-boundary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 9px clamp(16px, 4vw, 42px);
+  color: color-mix(in srgb, var(--snap-ink, currentColor) 72%, transparent);
+  background: color-mix(in srgb, var(--snap-bg, #fff) 74%, white 26%);
+  border-bottom: 1px solid color-mix(in srgb, var(--snap-ink, currentColor) 14%, transparent);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.demo-boundary strong {
+  color: var(--snap-accent, currentColor);
+  font-size: 0.76rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.demo-boundary span {
+  min-width: 0;
+}
+
 /* repo-snapshot:end */
