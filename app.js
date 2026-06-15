@@ -1,4 +1,5 @@
 const storageKey = "smart-fortune-faith-demo-v1";
+const navStorageKey = "smart-fortune-faith-nav-expanded";
 
 const currency = new Intl.NumberFormat("zh-TW", {
   style: "currency",
@@ -241,7 +242,8 @@ const elements = {
   taskForm: document.querySelector("#taskForm"),
   taskList: document.querySelector("#taskList"),
   noticeList: document.querySelector("#noticeList"),
-  resetDemo: document.querySelector("#resetDemo")
+  resetDemo: document.querySelector("#resetDemo"),
+  railToggle: document.querySelector("#railToggle")
 };
 
 initialize();
@@ -249,6 +251,7 @@ initialize();
 function initialize() {
   setDateInputs();
   bindEvents();
+  restoreNavState();
   renderAll();
 }
 
@@ -261,6 +264,9 @@ function bindEvents() {
   elements.drawFortune.addEventListener("click", drawFortune);
   elements.taskForm.addEventListener("submit", addTask);
   elements.resetDemo.addEventListener("click", resetDemo);
+  elements.railToggle.addEventListener("click", () => {
+    setNavExpanded(!document.body.classList.contains("nav-expanded"));
+  });
 
   document.querySelectorAll("[data-nav]").forEach((link) => {
     link.addEventListener("click", () => setActiveNav(link.dataset.nav));
@@ -284,6 +290,19 @@ function bindEvents() {
   });
 }
 
+function setNavExpanded(expanded) {
+  document.body.classList.toggle("nav-expanded", expanded);
+  elements.railToggle.setAttribute("aria-expanded", String(expanded));
+  elements.railToggle.setAttribute("aria-label", expanded ? "收合工作台導覽" : "展開工作台導覽");
+  elements.railToggle.setAttribute("title", expanded ? "收合工作台導覽" : "展開工作台導覽");
+  elements.railToggle.querySelector("span").textContent = expanded ? "‹" : "›";
+  writeStorage(navStorageKey, expanded ? "1" : "0");
+}
+
+function restoreNavState() {
+  setNavExpanded(readStorage(navStorageKey) === "1");
+}
+
 function setDateInputs() {
   const dateInputs = document.querySelectorAll('input[type="date"]');
 
@@ -296,7 +315,7 @@ function setDateInputs() {
 }
 
 function loadState() {
-  const stored = localStorage.getItem(storageKey);
+  const stored = readStorage(storageKey);
 
   if (!stored) {
     return structuredClone(defaultState);
@@ -311,13 +330,37 @@ function loadState() {
 }
 
 function saveState() {
-  localStorage.setItem(storageKey, JSON.stringify(state));
+  writeStorage(storageKey, JSON.stringify(state));
 }
 
 function resetDemo() {
-  localStorage.removeItem(storageKey);
+  removeStorage(storageKey);
   state = structuredClone(defaultState);
   renderAll();
+}
+
+function readStorage(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeStorage(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Demo remains usable when storage is unavailable.
+  }
+}
+
+function removeStorage(key) {
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // Demo remains usable when storage is unavailable.
+  }
 }
 
 function renderAll() {
